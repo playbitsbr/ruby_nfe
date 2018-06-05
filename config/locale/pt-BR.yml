@@ -1,0 +1,8 @@
+pt-BR:
+  activemodel:
+    errors:
+      models:
+        ruby_nfe/models/taxpayer_field:
+          attributes:
+            field:
+              invalid: 'Field atributo [campo] inválido classe [CampoContribuinte]: máximo de 20 caracteres'

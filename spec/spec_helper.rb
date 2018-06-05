@@ -6,6 +6,7 @@ require 'ruby_nfe'
 require 'rspec'
 require 'vcr'
 require 'factory_bot'
+require 'shoulda/matchers'
 
 path = File.expand_path('spec/support')
 Dir.glob("#{path}/**/*.rb", &method(:require))
@@ -16,6 +17,8 @@ VCR.configure do |config|
 end
 
 RSpec.configure do |config|
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
   config.include FactoryBot::Syntax::Methods
 
   config.before(:suite) do
